@@ -9,7 +9,7 @@ services:
     hostname: "prometheus"
     ports:
       - "9090:9090"
-    links:    
+    external_links:    
       - mvcapp
 
   grafana:
