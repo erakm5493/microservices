@@ -1,9 +1,9 @@
 # docker-compose.yml
 version: '3.1'
 services:
-   mvcapp:
-      container_name: "mvcapp"
-      hostname: "mvcapp"
+   MvcApp:
+      container_name: "MvcApp"
+      hostname: "MvcApp"
       image: erakm5493/devops:latest
       ports:
         - "80:80"
