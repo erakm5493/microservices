@@ -1,0 +1,24 @@
+pipeline {
+  environment {
+    registry = "erakm5493/devops"
+    registryCredential = 'docker'
+    dockerImage = ''
+  }
+  agent {label "infra"}
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/erakm5493/microservices.git'
+      }
+    }
+     
+    stage('Integrate Test') {
+     steps {
+        sh "sudo docker-compose rm -f" 
+        sh "sudo docker-compose pull "
+        sh "sudo docker-compose up --build -d &"
+     }
+    }
+  }
+}
+ 
