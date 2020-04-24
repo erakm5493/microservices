@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.1'
+services:
+   mvcapp:
+      container_name: "mvcapp"
+      hostname: "mvcapp"
+      image: erakm5493/devops:latest
+      ports:
+        - "80:80"
+      environment:
+        ConnectionStrings__ProductsContext: "Server=db;Database=ProductsContext;User=sa;Password=@Aa123456;"
+     
